@@ -55,7 +55,9 @@ class EventListener implements Listener{
       }
       if($chestItem->hasCustomBlockData()){
          if($chestItem->getCustomBlockData()->hasTag("id", IntTag::class)){
-            if($chestItem->getCustomBlockData()->getString("owner") == $player->getName()){
+            if(strtolower($chestItem->getCustomBlockData()->getString("owner")) == strtolower(
+               $player->getName()
+            )){
                $chestinv->onClose($player);
                $player->sendMessage("§cYou cannot buy items your");
             }else{
