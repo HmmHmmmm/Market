@@ -5,7 +5,7 @@ branches:
 projects:
   Market:
     path: ""
-    icon: "images/icon.jpg"
+    icon: "images/icon.png"
     libs:
     - src: thebigsmilexd/customui/customui
       version: ^3.0.0
