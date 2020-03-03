@@ -28,7 +28,7 @@ Download the plugin EconomyAPI [Click here](https://poggit.pmmp.io/p/economyapi)
 
 
 **How to use**<br>
-- ?
+- ???
 
 
 **Command**<br>
