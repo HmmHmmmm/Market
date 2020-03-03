@@ -55,8 +55,13 @@ class EventListener implements Listener{
       }
       if($chestItem->hasCustomBlockData()){
          if($chestItem->getCustomBlockData()->hasTag("id", IntTag::class)){
-            $chestinv->onClose($player);
-            $this->plugin->getMarketForm()->BuyConfirm($player, $chestItem);
+            if($chestItem->getCustomBlockData()->getString("owner") == $player->getName()){
+               $chestinv->onClose($player);
+               $player->sendMessage("§cYou cannot buy items your");
+            }else{
+               $chestinv->onClose($player);
+               $this->plugin->getMarketForm()->BuyConfirm($player, $chestItem);
+            }
          }
       }
    }
