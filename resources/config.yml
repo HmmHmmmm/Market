@@ -1,0 +1,6 @@
+#Language
+#thai=ภาษาไทย
+#english=English language
+language: english
+
+database: yml
