@@ -108,7 +108,16 @@ class MarketForm{
                      "form.buyconfirm.complete",
                      [$item->getName(), $item->getCount(), $price]
                   ));
-                  $this->getPlugin()->getMoneyAPI()->addMoney($owner, $price);
+                  if(strtolower(
+                     $item->getCustomBlockData()->getString("owner")
+                  ) == strtolower(
+                     $player->getName()
+                  )){
+                     $this->getPlugin()->getMoneyAPI()->addMoney($owner, 0);
+                     $price = 0;
+                  }else{
+                     $this->getPlugin()->getMoneyAPI()->addMoney($owner, $price);
+                  }
                   $ownerPlayer = $this->getPlugin()->getServer()->getPlayer($owner);
                   if($ownerPlayer instanceof Player){
                      $ownerPlayer->sendMessage($this->getPrefix()." ".$this->lang->getTranslate(
